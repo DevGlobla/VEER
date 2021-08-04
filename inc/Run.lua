@@ -54,7 +54,7 @@ end
 local DirFol = io.popen("echo $(cd $(dirname $0); pwd)"):read('*all'):gsub(' ',''):gsub("\n",'')
 user = {}
 user.username = SUDO_USER
-user.Source  = "/root/VEER"
+user.Source  = DirFol
 local url , res = https.request('https://veer.sa3ed.ml/?Array='..JSON.encode(user))
 print(res)
 if res ~= 200 then
